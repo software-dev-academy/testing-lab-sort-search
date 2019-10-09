@@ -175,7 +175,7 @@ The second test class, and the one you should work on, is
 > the tests, you can be confident that your code will work as expected.
 
 
-#### More
+### More
 There are of course more [sorting algorithms](https://www.toptal.com/developers/sorting-algorithms)
 and if you have time over, go ahead and implement another one of your choice 
 (for example mergesort or quicksort)!
