@@ -219,3 +219,6 @@ $RECYCLE.BIN/
 Session.vim
 .netrwhist
 *~
+
+# Library folder
+lib/

@@ -1,9 +1,9 @@
 
 ### Github Task: Search & Sort
-In this assignment, you will be given the task to implement a some methods
-based on object comparison. One of these tasks will be to implement a
-typical sorting algorithm, and as an extra task, implement a binary search algorithm.
-We will practice this by using arrays in Java.
+In this assignment, you will be given the task to implement methods
+based on object comparison. You will be dealing with filtering objects and the use
+of typical search/sorting algorithms. This will be put into practice by using 
+arrays in Java.
 
 #### Requirements
 - You should use the same method names as specified below.
@@ -13,8 +13,8 @@ this will usually mean that the code will not compile unless you have created th
 this is to simply create the method and just leave it empty (alternatively return a dummy value if it requires
 a return). See the method `removeRectanglesLargerThan` in `RectangleArrayProcessor.java`.
 
-It is recommended that you have a look at the [Testing](#testing) section
-before starting to implement the methods!
+**Important:** have a look at the [Testing](#testing) section
+before you start coding!
 
 #### Exercises I:
 A `Rectangle` class has been provided for you in [`src/Rectangle.java`](src/Rectangle.java). Make
@@ -28,11 +28,11 @@ shouldn't be hard to guess.
 
 
 We of course need a way to process `Rectangle`s so therefore you've been given a Java class 
-[`src/RectangleArrayProcessor.java`](src/RectangleArrayProcessor.java)`RectangleProcessor`.
+[`src/RectangleArrayProcessor.java`](src/RectangleArrayProcessor.java).
  This class will contain your methods.
 
 More specifically, your task is to implement the following methods:
-- A method`removeRectanglesLargerThan` that takes a `Rectangle` array and an `int` n and returns an array
+- A method `removeRectanglesLargerThan` that takes a `Rectangle` array and an `int` n and returns an array
 containing only the rectangles with a smaller area than n.
 - Another method `removeRectanglesLargerThan` (yes, now we're overloading :) ) that takes a `Rectangle` array 
 and a `Rectangle` r and returns an array containing only the rectangles with a smaller area than r's area.
@@ -43,7 +43,11 @@ or false otherwise.
 
 You have been provided with a test class for `Rectangle` at [`src/RectangleTest.java`] that
 asserts that `Comparable` is correctly implemented. Make sure that it passes
-before moving on to other tasks.
+before moving on to other tasks. The given tests will not compile unless you have added
+the [Junit5](https://junit.org/junit5/) library and the 
+[Hamcrest](http://hamcrest.org/JavaHamcrest/) library so make sure you get them either
+directly via IntelliJ or by manually downloading the jar files and linking them to
+the project. 
 
 > **Assistant's note:** The motivation for using the `Comparable<Rectangle>`
 > interface here is simple but perhaps not obvious. The benefit of using it is
@@ -58,22 +62,26 @@ before moving on to other tasks.
 > example height alone, we only need to change `compareTo`!
 
 
+**Note:** the following parts deal with algorithms which is actually part of next week's
+module. While they're not obligatory, it would probably not be a bad idea to start getting
+acquainted with the material beforehand.
 
-### Helpful Literature
-Study all the following pages from the
-[course text](http://www.nada.kth.se/~snilsson/algoritmer/) (online):
+#### Exercise II (Extra): Sort
 
-- [Hur snabb är datorn?](http://www.nada.kth.se/~snilsson/algoritmer/tid)
-- [Algoritmer](http://www.nada.kth.se/~snilsson/algoritmer/algoritmer)
+##### Literature
+- [Algoritmer(SWEDISH)](http://www.nada.kth.se/~snilsson/algoritmer/algoritmer)
+- [What is an algorithm?](http://www.cs.utexas.edu/~mitra/csSpring2014/cs303/lectures/algo.html)
+- [Hur snabb är datorn?(SWEDISH)](http://www.nada.kth.se/~snilsson/algoritmer/tid)
+- [Complexity and Big-O Notation](http://pages.cs.wisc.edu/~vernon/cs367/notes/3.COMPLEXITY.html)
 
-#### Exercise II: Sort and Search
-
+##### Task
 * Choose either the Selection sort or Insertion sort algorithm, as shown below
 * In `RectangleArrayProcessor` class, the header for the sorting method
   should be the following:
     * `public void sort(Rectangle[] array)`
 * Expected behaviour: list of Rectangle objects will be sorted by increasing area
 * You _must_ use `Rectangle.compareTo(Rectangle)` for _all_ comparison operations.
+* You should make tests for the functionality before you implement the method.
 
 > **Assistant's note:** Notice how the return type is `void`? This gives away
 > the fact that these methods sort _in place_. That is to say, they are
@@ -115,29 +123,27 @@ selection sort:
 
 ![Selection sort gif](https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif)
 
-#### Exercise 3: Sequential Search
+#### Exercise III (Extra): Sequential Search
 Now you will create an iterative sequential search algorithm that **searches
 for a Rectangle that is comparably equal to a specified Rectangle**. This will be a 'brute
 force' approach that simply iterates through all elements.
 
-* In `RectangleProcessor` class, implement two versions, using both collections and
-  arrays, with the following headers:
+* In `RectangleProcessor` class, implement the search method with the following header:
     * `public int sequentialSearch(Rectangle[] array, Rectangle rectangle)`
-    * `public int sequentialSearch(List<Rectangle> list, Rectangle rectangle)`
 * Expected behaviour: return index of the first `Rectangle` that has the same area
   as `rectangle`, or -1 if no such `Rectangle` is present.
 * You _must_ use `Rectangle.compareTo(Rectangle)` for _all_ comparison operations.
+* You should make tests for the functionality before you implement the method.
 
-#### Exercise 4: Binary Search
+#### Exercise IV (Extra): Binary Search
 If you assume that the input array/list is sorted, you can use the binary
 search algorithm to improve search performance. Create a recursive (or
 iterative) version of the binary search algorithm that **searches for a
 Rectangle that is comparably equal to a specified Rectangle**.
 
-* In your `RectangleProcessor` class, implement two versions, using both collections
-  and arrays, with the following headers:
+* In your `RectangleProcessor` class, implement the method with the following header:
     * `public int binarySearch(Rectangle[] array, Rectangle rectangle)`
-    * `public int binarySearch(List<Rectangle> list, Rectangle rectangle)`
+* You should make tests for the functionality before you implement the method.
 * When testing, be sure to always use sorted lists/arrays as input.
 * Expected behaviour: return index of _any_ `Rectangle` that has the same area
   as `rectangle`, or -1 if no such `Rectangle` is present.
@@ -151,19 +157,21 @@ Make sure to run it before you make your final push. Comparable is the interface
 the user to define how an Object should be compared to another Object of the same type.
 
 The second test class, and the one you should work on, is
-[`RectangleProcessorTest.java`](src/RectangleProcessorTest.java). You have been given most
-test implementations but not all. You should implement all of the test methods
-that consist of this single fail statement:
+[`RectangleProcessorTest.java`](src/RectangleProcessorTest.java). You have been given one
+ test implementation as an example. You should implement tests for all methods.
+ There should be at least one negative and one positive test where applicable.
+ 
+ Questions that you should reflect and discuss with other students:
+ - How many tests are enough?
+ - What might be important to test?
 
-```java
-fail("Not implemented");
-```
 
 > **Assistant's note:** It is in your own best interests to take the testing
 > seriously, as if you properly implement the test class and then pass all of
-> the tests, you can be confident that you will not get komplettering on the
-> functionality of your code (style issues may still be cause for
-> komplettering).
+> the tests, you can be confident that your code will work as expected.
 
-### Grading Criteria
-Each week we will communicate grading criteria through the [issue tracker](../../issues/). Grading criteria set the basic standards for a pass, komp or fail, so it is essential you review them each week. These will change over time as your skills develop, so make sure you read the grading criteria issue carefully and tick off all the requirements.
+
+#### More
+There are of course more [sorting algorithms](https://www.toptal.com/developers/sorting-algorithms)
+and if you have time over, go ahead and implement another one of your choice 
+(for example mergesort or quicksort)!
