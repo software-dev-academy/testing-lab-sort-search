@@ -161,7 +161,7 @@ Make sure to run it before you make your final push. Comparable is the interface
 the user to define how an Object should be compared to another Object of the same type.
 
 The second test class, and the one you should work on, is
-[`RectangleProcessorTest.java`](src/RectangleProcessorTest.java). You have been given one
+[`src/RectangleProcessorTest.java`](src/RectangleProcessorTest.java). You have been given one
  test implementation as an example. You should implement tests for all methods.
  There should be at least one negative and one positive test where applicable.
  
