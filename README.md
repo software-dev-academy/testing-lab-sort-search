@@ -1,5 +1,5 @@
 
-### Github Task: Search & Sort
+### Github Task: Filter, Search & Sort
 In this assignment, you will be given the task to implement methods
 based on object comparison. You will be dealing with filtering objects and the use
 of typical search/sorting algorithms. This will be put into practice by using 
@@ -11,12 +11,13 @@ arrays in Java.
 - You should strive to implement the tests first before you implement the code for the methods. Of course 
 this will usually mean that the code will not compile unless you have created the method. A workaround for
 this is to simply create the method and just leave it empty (alternatively return a dummy value if it requires
-a return). See the method `removeRectanglesLargerThan` in `RectangleArrayProcessor.java`.
+a return). See the method `removeRectanglesLargerThan` in 
+[`src/RectangleArrayProcessor.java`](src/RectangleArrayProcessor.java).
 
 **Important:** have a look at the [Testing](#testing) section
 before you start coding!
 
-#### Exercises I:
+#### Exercises I: Filter
 A `Rectangle` class has been provided for you in [`src/Rectangle.java`](src/Rectangle.java). Make
 yourself familiar with the source code and note that the `compareTo` method has been overriden so that instances of
  `Rectangle` can be compared by their `area`. Information on Object Ordering and
@@ -41,32 +42,21 @@ or false otherwise.
  - Another method `filterRectanglesWithEqualArea` that takes a `Rectangle` array 
  and a `Rectangle` r and returns an array containing only the rectangles with an area equal to r's area.
 
-You have been provided with a test class for `Rectangle` at [`src/RectangleTest.java`] that
-asserts that `Comparable` is correctly implemented. Make sure that it passes
-before moving on to other tasks. The given tests will not compile unless you have added
+You have been provided with a test class for `Rectangle` at 
+[`src/RectangleTest.java`](src/RectangleTest.java) which should pass. The test class
+you will be working on is 
+[`src/RectangleArrayProcessor.java`](src/RectangleArrayProcessor.java).
+The given tests will not compile unless you have added
 the [Junit5](https://junit.org/junit5/) library and the 
 [Hamcrest](http://hamcrest.org/JavaHamcrest/) library so make sure you get them either
 directly via IntelliJ or by manually downloading the jar files and linking them to
 the project. 
 
-> **Assistant's note:** The motivation for using the `Comparable<Rectangle>`
-> interface here is simple but perhaps not obvious. The benefit of using it is
-> that we can implement generic comparison based algorithms (such as serach and
-> sort) that don't actually know what they are comparing by. For the sake of
-> keeping complexity down, you will only be implementing algorithms
-> specifically for the `Rectangle` class here, but with a small change to the method
-> signatures, one could make the algorithms work for _any_ class `T` that
-> implements `Comparable<T>` (ask your assistant if you are curious). An
-> implication, and huge benefit, of the search/sort not having anything to do
-> with the comparison is that if we decide that we want to compare by for
-> example height alone, we only need to change `compareTo`!
-
+#### Exercise II (Extra): Sort
 
 **Note:** the following parts deal with algorithms which is actually part of next week's
 module. While they're not obligatory, it would probably not be a bad idea to start getting
 acquainted with the material beforehand.
-
-#### Exercise II (Extra): Sort
 
 ##### Literature
 - [Algoritmer(SWEDISH)](http://www.nada.kth.se/~snilsson/algoritmer/algoritmer)
@@ -86,6 +76,20 @@ acquainted with the material beforehand.
 > **Assistant's note:** Notice how the return type is `void`? This gives away
 > the fact that these methods sort _in place_. That is to say, they are
 > supposed to _mutate_ the argument array/list, instead of returning a copy.
+
+
+> **Assistant's 2nd note:** The motivation for using `Comparable<Rectangle>`
+> interface earlier in rectangle is simple but perhaps not obvious. The benefit of 
+> using it is
+> that we can implement generic comparison based algorithms (such as search and
+> sort) that don't actually know what they are comparing by. For the sake of
+> keeping complexity down, you will only be implementing algorithms
+> specifically for the `Rectangle` class here, but with a small change to the method
+> signatures, one could make the algorithms work for _any_ class `T` that
+> implements `Comparable<T>` (ask your assistant if you are curious). An
+> implication, and huge benefit, of the search/sort not having anything to do
+> with the comparison is that if we decide that we want to compare by for
+> example height alone, we only need to change `compareTo`!
 
 ```python
 Insertion Sort (A)
