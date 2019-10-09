@@ -43,9 +43,9 @@ or false otherwise.
  and a `Rectangle` r and returns an array containing only the rectangles with an area equal to r's area.
 
 You have been provided with a test class for `Rectangle` at 
-[`src/RectangleTest.java`](src/RectangleTest.java) which should pass. The test class
+[`test/RectangleTest.java`](test/RectangleTest.java) which should pass. The test class
 you will be working on is 
-[`src/RectangleArrayProcessor.java`](src/RectangleArrayProcessor.java).
+[`test/RectangleArrayProcessorTest.java`](test/RectangleArrayProcessorTest.java).
 The given tests will not compile unless you have added
 the [Junit5](https://junit.org/junit5/) library and the 
 [Hamcrest](http://hamcrest.org/JavaHamcrest/) library so make sure you get them either
@@ -155,13 +155,13 @@ Rectangle that is comparably equal to a specified Rectangle**.
 
 ### Testing
 For this week's testing, you've been provided with two test classes.
-[`RectangleTest.java`](src/RectangleTest.java), which you do not have to do any more work on,
+[`test/RectangleTest.java`](test/RectangleTest.java), which you do not have to do any more work on,
 is just there to make sure that `Comparable<Rectangle>` is correctly implemented.
 Make sure to run it before you make your final push. Comparable is the interface which allows
 the user to define how an Object should be compared to another Object of the same type.
 
 The second test class, and the one you should work on, is
-[`src/RectangleProcessorTest.java`](src/RectangleProcessorTest.java). You have been given one
+[`test/RectangleArrayProcessorTest.java`](test/RectangleArrayProcessorTest.java). You have been given one
  test implementation as an example. You should implement tests for all methods.
  There should be at least one negative and one positive test where applicable.
  
