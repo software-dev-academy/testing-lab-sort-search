@@ -21,35 +21,16 @@ public class RectangleArrayProcessorTest {
     /* An instance of the RectangleArrayProcessor */
     private RectangleArrayProcessor rectangleArrayProcessor;
 
-    /* An instance of a helper class, used to construct Rectangles */
-    private RectangleFactory rectangleFactory;
-
-    /* The length of the even length list used in the tests */
-    private final int EVEN_LIST_LENGTH = 100;
-    /* The length of the odd length list used in the tests */
-    private final int ODD_LIST_LENGTH = 99;
-
-    /* An array of even length */
-    private Rectangle[] evenArray;
-    /* An array of odd length */
-    private Rectangle[] oddArray;
-
-    /* A list of even length */
-    private List<Rectangle> evenList;
-    /* A list of odd length */
-    private List<Rectangle> oddList;
-
     /**
      * Set up variables to be available for each test case.
      *
      * Assistant's note: this function is executed once before every test
      * case in this class. In this method we initalize some default
-     * values that will use to verify the correctness of the list processor.
+     * values that will use to verify the correctness of the array processor.
      */
     @BeforeEach
     public void setUp() {
         rectangleArrayProcessor = new RectangleArrayProcessor();
-        rectangleFactory   = new RectangleFactory();
     }
     
     
@@ -80,7 +61,8 @@ public class RectangleArrayProcessorTest {
 }
 
 /**
- * A helper class to aid construction of collections of Rectangle object.
+ * A helper class to aid construction of collections of Rectangle object. You don't have to use this class
+ * but it can be helpful!
  */
 class RectangleFactory {
 
