@@ -1,6 +1,6 @@
 
 ### Github Task: Filter, Search & Sort
-In this assignment, you will be given the task to implement methods
+In this assignment, you will be given the task to implement methods, in a test driven manner,
 based on object comparison. You will be dealing with filtering objects and the use
 of typical search/sorting algorithms. This will be put into practice by using 
 arrays in Java.
