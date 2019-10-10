@@ -46,8 +46,6 @@ public class RectangleArrayProcessorTest {
         int inputMaxArea = 5;
         Rectangle[] expectedArray = {
                 new Rectangle(2, 2),
-                new Rectangle(2, 3),
-                new Rectangle(5, 4),
                 new Rectangle(1, 5)
         };
 
