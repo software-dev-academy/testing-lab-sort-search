@@ -35,7 +35,7 @@ public class RectangleArrayProcessorTest {
     
     
     @Test
-    void testRectangle() {
+    void testProcessorRemovesRectanglesLargerThan() {
         // Arrange
         Rectangle[] inputArray = {
                 new Rectangle(2, 2),
