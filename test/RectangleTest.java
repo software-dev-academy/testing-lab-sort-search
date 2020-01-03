@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 /**
  * Test class for Box.
@@ -18,15 +17,6 @@ public class RectangleTest {
     private final Rectangle SMALL_Rectangle = new Rectangle(ALL_HEIGHT, SMALL_WIDTH);
     private final Rectangle MEDIUM_Rectangle = new Rectangle(ALL_HEIGHT, MEDIUM_WIDTH);
     private final Rectangle LARGE_Rectangle = new Rectangle(ALL_HEIGHT, LARGE_WIDTH);
-
-    @Test
-    public void boxImplementsComparable() {
-        // Act
-        Rectangle rectangle = new Rectangle(1, 1);
-
-        // Assert
-        assertThat(rectangle, isA(Comparable.class));
-    }
 
     @Test
     public void compareToIsPositiveWhenArgumentIsSmallerThanCallee() {
@@ -67,8 +57,8 @@ public class RectangleTest {
         int compareLargeToLarge = LARGE_Rectangle.compareTo(largeRectangle);
 
         // Assert
-        assertThat(compareSmallToSmall, equalTo(0));
-        assertThat(compareMediumToMedium, equalTo(0));
-        assertThat(compareLargeToLarge, equalTo(0));
+        assertEquals(0, compareSmallToSmall);
+        assertEquals(0, compareMediumToMedium);
+        assertEquals(0, compareLargeToLarge);
     }
 }
